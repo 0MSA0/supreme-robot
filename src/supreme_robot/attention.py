@@ -12,7 +12,7 @@ class SupremeMultiHeadAttention(nn.Module):
         temperature: float,
         dropout: float,
         num_heads: int,
-        qkv_bias=False
+        qkv_bias=False,
     ):
         super().__init__()
         # Ensure d_k is divisible by num_heads instead of d_out
