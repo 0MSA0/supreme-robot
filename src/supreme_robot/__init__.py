@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch
 
-from .attention import FlexibleMultiHeadAttention
+from .attention import SupremeMultiHeadAttention
 
 
 def main() -> None:
@@ -29,22 +29,15 @@ def main() -> None:
     torch.manual_seed(420)
     d_k = 8
     temperature = 1e-8
-    qkv_bias = False
 
-    w_key = nn.Linear(d_in, d_k, bias=qkv_bias)
-    w_query = nn.Linear(d_in, d_k, bias=qkv_bias)
-    w_value = nn.Linear(d_in, d_k, bias=qkv_bias)
-
-    mha = FlexibleMultiHeadAttention(
+    mha = SupremeMultiHeadAttention(
+        d_in,
         d_out,
         d_k,
         context_length,
         temperature,
         0.0,
-        num_heads=2,
-        w_key=w_key,
-        w_query=w_query,
-        w_value=w_value,
+        num_heads=2
     )
 
     context_vecs = mha(batch)
@@ -56,19 +49,14 @@ def main() -> None:
     torch.manual_seed(420)
     d_k = 8
     temperature = 0.5
-    w_key = nn.Linear(d_in, d_k, bias=qkv_bias)
-    w_query = nn.Linear(d_in, d_k, bias=qkv_bias)
-    w_value = nn.Linear(d_in, d_k, bias=qkv_bias)
-    mha = FlexibleMultiHeadAttention(
+    mha = SupremeMultiHeadAttention(
+        d_in,
         d_out,
         d_k,
         context_length,
         temperature,
         0.0,
-        num_heads=2,
-        w_key=w_key,
-        w_query=w_query,
-        w_value=w_value,
+        num_heads=2
     )
 
     context_vecs = mha(batch)
@@ -80,19 +68,14 @@ def main() -> None:
     torch.manual_seed(420)
     d_k = 4
     temperature = 0.5
-    w_key = nn.Linear(d_in, d_k, bias=qkv_bias)
-    w_query = nn.Linear(d_in, d_k, bias=qkv_bias)
-    w_value = nn.Linear(d_in, d_k, bias=qkv_bias)
-    mha = FlexibleMultiHeadAttention(
+    mha = SupremeMultiHeadAttention(
+        d_in,
         d_out,
         d_k,
         context_length,
         temperature,
         0.0,
-        num_heads=2,
-        w_key=w_key,
-        w_query=w_query,
-        w_value=w_value,
+        num_heads=2
     )
 
     context_vecs = mha(batch)

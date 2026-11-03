@@ -2,18 +2,17 @@ import torch
 import torch.nn as nn
 
 
-class FlexibleMultiHeadAttention(nn.Module):
+class SupremeMultiHeadAttention(nn.Module):
     def __init__(
         self,
-        d_out,
-        d_k,
-        context_length,
-        temperature,
-        dropout,
-        num_heads,
-        w_key: nn.Linear,
-        w_query: nn.Linear,
-        w_value: nn.Linear,
+        d_in: int,
+        d_out: int,
+        d_k: int,
+        context_length: int,
+        temperature: float,
+        dropout: float,
+        num_heads: int,
+        qkv_bias=False
     ):
         super().__init__()
         # Ensure d_k is divisible by num_heads instead of d_out
@@ -29,9 +28,9 @@ class FlexibleMultiHeadAttention(nn.Module):
         self.head_dim = d_k // num_heads
 
         # Project key, query and value to d_k instead of d_out
-        self.W_key = w_key
-        self.W_query = w_query
-        self.W_value = w_value
+        self.W_key = nn.Linear(d_in, d_k, bias=qkv_bias)
+        self.W_query = nn.Linear(d_in, d_k, bias=qkv_bias)
+        self.W_value = nn.Linear(d_in, d_k, bias=qkv_bias)
 
         # Pretty much the same as above
         self.dropout = nn.Dropout(dropout)
