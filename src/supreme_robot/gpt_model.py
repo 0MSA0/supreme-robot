@@ -1,8 +1,8 @@
 import torch.nn as nn
 import torch
 
-from supreme_robot.layer_norm import LayerNorm
-from supreme_robot.transformer import TransformerBlock
+from .layer_norm import LayerNorm
+from .transformer import TransformerBlock
 
 
 class SupremeGPTModel(nn.Module):
