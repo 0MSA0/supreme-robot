@@ -60,7 +60,7 @@ class SupremeMultiHeadAttention(nn.Module):
         # Pretty much the same as above
         attn_scores = queries @ keys.transpose(2, 3)
         mask_bool = self.mask.bool()[:num_tokens, :num_tokens]
-        attn_scores.masked_fill_(mask_bool, -torch.inf)
+        attn_scores.masked_fill_(mask_bool, -6.9e127)
 
         # Softmax with temperature
         attn_weights = torch.softmax(
