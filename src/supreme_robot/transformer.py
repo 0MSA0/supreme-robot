@@ -1,7 +1,8 @@
 import torch.nn as nn
-from supreme_robot import SupremeMultiHeadAttention
-from supreme_robot.feed_forward import FeedForward
-from supreme_robot.layer_norm import LayerNorm
+
+from .attention import SupremeMultiHeadAttention
+from .feed_forward import FeedForward
+from .layer_norm import LayerNorm
 
 
 class TransformerBlock(nn.Module):
