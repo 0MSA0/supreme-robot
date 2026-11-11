@@ -1,5 +1,4 @@
 import torch
-import tiktoken
 from torch.utils.data import Dataset, DataLoader
 
 
@@ -8,7 +7,7 @@ class SupremeDataset(Dataset):
         self.input_ids = []
         self.target_ids = []
 
-        encoded_words = tokenizer.encode(input_text)
+        encoded_words = tokenizer.encode(input_text, allowed_special={"<|endoftext|>"})
 
         # Use a sliding window to chunk the input text
         # into overlapping sequences of max_length
@@ -23,3 +22,28 @@ class SupremeDataset(Dataset):
 
     def __getitem__(self, index):
         return self.input_ids[index], self.target_ids[index]
+
+def create_supreme_dataloader(
+    txt,
+    tokenizer,
+    batch_size=4,
+    max_length=256,
+    stride=128,
+    shuffle=True,
+    drop_last=True,
+    num_workers=0,
+):
+
+    # Create dataset
+    dataset = SupremeDataset(txt, tokenizer, max_length, stride)
+
+    # Create dataloader
+    dataloader = DataLoader(
+        dataset,
+        batch_size=batch_size,
+        shuffle=shuffle,
+        drop_last=drop_last,
+        num_workers=num_workers,
+    )
+
+    return dataloader

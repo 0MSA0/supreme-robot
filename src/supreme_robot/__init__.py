@@ -12,11 +12,13 @@ from .gelu import GELU
 from .gpt_model import SupremeGPTModel
 from .layer_norm import LayerNorm
 from .transformer import TransformerBlock
+from .streaming_data_loader import StreamingSupremeDataset
 
 __all__ = [
     "FeedForward",
     "GELU",
     "LayerNorm",
+    "StreamingSupremeDataset",
     "SupremeDataset",
     "SupremeGPTModel",
     "SupremeMultiHeadAttention",
