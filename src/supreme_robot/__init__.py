@@ -5,20 +5,24 @@ import urllib.request
 import tiktoken
 import torch
 
+from datasets import load_dataset
+
 from .attention import SupremeMultiHeadAttention
 from .data_loader import SupremeDataset
 from .feed_forward import FeedForward
 from .gelu import GELU
 from .gpt_model import SupremeGPTModel
 from .layer_norm import LayerNorm
+from .trainer import train_model
 from .transformer import TransformerBlock
-from .streaming_data_loader import StreamingSupremeDataset
+from .streaming_data_loader import StreamingSupremeDataset, create_streaming_dataloader
 
 __all__ = [
     "FeedForward",
     "GELU",
     "LayerNorm",
     "StreamingSupremeDataset",
+    "create_streaming_dataloader",
     "SupremeDataset",
     "SupremeGPTModel",
     "SupremeMultiHeadAttention",
@@ -26,14 +30,84 @@ __all__ = [
     "main",
     "test_generate_text",
     "test_text",
+    "train_model"
 ]
 
 
 def main() -> None:
     print("Hello from supreme-robot!")
 
-    start_context = "Hello, I am"
-    test_text(start_context)
+    tokenizer = tiktoken.get_encoding("gpt2")
+
+    # Training settings
+    config = {
+        "epochs": 1,
+        "lr": 2e-4,
+        "batch_size": 10,
+        "weight_decay": 0.1,
+        "data_loader_num_workers": 1,
+    }
+
+    # Model settings
+    gpt_config_124_m = {
+        "vocab_size": tokenizer.n_vocab,  # Vocabulary size
+        "context_length": 512,  # Context length
+        "emb_dim": 768,  # Embedding dimension
+        "n_heads": 12,  # Number of attention heads
+        "n_layers": 12,  # Number of layers
+        "temperature": 1.0,  # Temperature
+        "drop_rate": 0.1,  # Dropout rate
+        "qkv_bias": True,  # Query-Key-Value bias
+    }
+
+    wandb_project_name = "supreme-robot-2"
+
+    save_path = "./weights/model.pth"
+
+    model = SupremeGPTModel(gpt_config_124_m)
+
+    optimizer = torch.optim.AdamW(
+        model.parameters(),
+        lr=config["lr"],
+        weight_decay=config["weight_decay"]
+    )
+
+    lambda1 = lambda epoch: 0.65 ** epoch
+
+    lr_scheduler = torch.optim.lr_scheduler.LambdaLR(
+        optimizer,
+        lr_lambda=lambda1
+    )
+
+    loss_fn = torch.nn.CrossEntropyLoss()
+
+    data_stream = load_dataset(
+        "Salesforce/wikitext",
+        name="wikitext-103-raw-v1",
+        split="train",
+        streaming=True
+    ).shuffle(seed=69420, buffer_size=10000)
+
+    dataloader = create_streaming_dataloader(
+        hf_stream=data_stream,
+        tokenizer=tokenizer,
+        batch_size=config["batch_size"],
+        max_length=gpt_config_124_m["context_length"],
+        stride=gpt_config_124_m["context_length"],
+        shuffle=False,
+        drop_last=True,
+        num_workers=config["data_loader_num_workers"]
+    )
+
+    train_model(model,
+                optimizer,
+                lr_scheduler,
+                loss_fn,
+                dataloader,
+                config["epochs"],
+                wandb_project_name,
+                config,
+                save_path)
 
 
 def test_text(start_context: str) -> None:

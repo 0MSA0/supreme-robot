@@ -29,3 +29,28 @@ class StreamingSupremeDataset(IterableDataset):
 
                 # Buffer um 'stride' weiterrücken
                 token_buffer = token_buffer[self.stride:]
+
+def create_streaming_dataloader(
+    hf_stream,
+    tokenizer,
+    batch_size=4,
+    max_length=256,
+    stride=128,
+    shuffle=True,
+    drop_last=True,
+    num_workers=0,
+):
+
+    # Create dataset
+    dataset = StreamingSupremeDataset(hf_stream, tokenizer, max_length, stride)
+
+    # Create dataloader
+    dataloader = DataLoader(
+        dataset,
+        batch_size=batch_size,
+        shuffle=shuffle,
+        drop_last=drop_last,
+        num_workers=num_workers,
+    )
+
+    return dataloader
