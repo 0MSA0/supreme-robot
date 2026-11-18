@@ -1,0 +1,113 @@
+gpu_model,mode,model,parameters_m,batch_size,status,tokens_per_second,mfu,is_best,is_max_batch
+,Current impl,gpt-small,124,1,success,572.42,0.0027,False,False
+,Current impl,gpt-small,124,2,success,11150.4,0.053,False,False
+,Current impl,gpt-small,124,4,success,15824.88,0.0752,False,False
+,Current impl,gpt-small,124,8,success,14906.68,0.0709,False,False
+,Current impl,gpt-small,124,16,success,16731.95,0.0795,False,False
+,Current impl,gpt-small,124,32,success,17226.13,0.0819,False,False
+,Current impl,gpt-small,124,64,success,17559.38,0.0835,False,False
+,Current impl,gpt-small,124,96,out_of_memory,,,False,False
+,Current impl,gpt-medium,355,1,success,3539.81,0.0482,False,False
+,Current impl,gpt-medium,355,2,success,5256.34,0.0715,False,False
+,Current impl,gpt-medium,355,4,success,5412.21,0.0736,False,False
+,Current impl,gpt-medium,355,8,success,5768.14,0.0785,False,False
+,Current impl,gpt-medium,355,16,success,6061.82,0.0825,False,False
+,Current impl,gpt-medium,355,32,out_of_memory,,,False,False
+,Current impl,gpt-large,774,1,success,2249.64,0.0669,False,False
+,Current impl,gpt-large,774,2,success,2630.62,0.0782,False,False
+,Current impl,gpt-large,774,4,success,2834.12,0.0842,False,False
+,Current impl,gpt-large,774,8,success,2902.77,0.0863,False,False
+,Current impl,gpt-large,774,16,out_of_memory,,,False,False
+,Current impl,gpt-xl,1558,1,success,1102.12,0.066,False,False
+,Current impl,gpt-xl,1558,2,success,1363.53,0.0816,False,False
+,Current impl,gpt-xl,1558,4,success,1457.49,0.0872,False,False
+,Current impl,gpt-xl,1558,8,success,1441.83,0.0863,False,False
+,Current impl,gpt-xl,1558,16,out_of_memory,,,False,False
+,BFloat16,gpt-small,124,1,success,804.28,0.0038,False,False
+,BFloat16,gpt-small,124,2,success,11322.33,0.0538,False,False
+,BFloat16,gpt-small,124,4,success,25724.68,0.1223,False,False
+,BFloat16,gpt-small,124,8,success,39324.54,0.187,False,False
+,BFloat16,gpt-small,124,16,success,49856.77,0.237,False,False
+,BFloat16,gpt-small,124,32,success,52320.19,0.2487,False,False
+,BFloat16,gpt-small,124,64,success,53793.52,0.2557,False,False
+,BFloat16,gpt-small,124,96,out_of_memory,,,False,False
+,BFloat16,gpt-medium,355,1,success,3663.67,0.0498,False,False
+,BFloat16,gpt-medium,355,2,success,8070.7,0.1098,False,False
+,BFloat16,gpt-medium,355,4,success,12586.26,0.1712,False,False
+,BFloat16,gpt-medium,355,8,success,17533.18,0.2385,False,False
+,BFloat16,gpt-medium,355,16,success,19163.1,0.2607,False,False
+,BFloat16,gpt-medium,355,32,success,20624.5,0.2806,False,False
+,BFloat16,gpt-medium,355,64,out_of_memory,,,False,False
+,BFloat16,gpt-large,774,1,success,2825.72,0.084,False,False
+,BFloat16,gpt-large,774,2,success,4509.74,0.134,False,False
+,BFloat16,gpt-large,774,4,success,7299.41,0.2169,False,False
+,BFloat16,gpt-large,774,8,success,9797.27,0.2911,False,False
+,BFloat16,gpt-large,774,16,success,10693.48,0.3178,False,False
+,BFloat16,gpt-large,774,32,out_of_memory,,,False,False
+,BFloat16,gpt-xl,1558,1,success,2104.22,0.1259,False,False
+,BFloat16,gpt-xl,1558,2,success,2925.42,0.1751,False,False
+,BFloat16,gpt-xl,1558,4,success,5105.85,0.3056,False,False
+,BFloat16,gpt-xl,1558,8,success,5818.45,0.3482,False,False
+,BFloat16,gpt-xl,1558,16,out_of_memory,,,False,False
+,Torch Modules,gpt-small,124,1,success,24892.2,0.0644,False,False
+,Torch Modules,gpt-small,124,2,success,49188.59,0.1273,False,False
+,Torch Modules,gpt-small,124,4,success,90263.27,0.2336,False,False
+,Torch Modules,gpt-small,124,8,success,130537.52,0.3379,False,False
+,Torch Modules,gpt-small,124,16,success,154099.35,0.3988,False,False
+,Torch Modules,gpt-small,124,32,success,158290.33,0.4097,False,False
+,Torch Modules,gpt-small,124,64,success,161710.45,0.4185,False,False
+,Torch Modules,gpt-small,124,96,success,163477.51,0.4231,False,True
+,Torch Modules,gpt-medium,355,1,success,12387.73,0.0912,False,False
+,Torch Modules,gpt-medium,355,2,success,25187.32,0.1855,False,False
+,Torch Modules,gpt-medium,355,4,success,48348.96,0.356,False,False
+,Torch Modules,gpt-medium,355,8,success,55401.84,0.408,False,False
+,Torch Modules,gpt-medium,355,16,success,64789.92,0.4771,False,False
+,Torch Modules,gpt-medium,355,32,success,68375.41,0.5035,False,False
+,Torch Modules,gpt-medium,355,64,success,70223.8,0.5171,False,False
+,Torch Modules,gpt-medium,355,96,success,70501.95,0.5192,False,True
+,Torch Modules,gpt-large,774,1,success,8459.98,0.1346,False,False
+,Torch Modules,gpt-large,774,2,success,16803.67,0.2674,False,False
+,Torch Modules,gpt-large,774,4,success,30164.32,0.48,False,False
+,Torch Modules,gpt-large,774,8,success,32380.27,0.5152,False,False
+,Torch Modules,gpt-large,774,16,success,35117.86,0.5588,False,False
+,Torch Modules,gpt-large,774,32,success,35747.34,0.5688,False,False
+,Torch Modules,gpt-large,774,64,success,35847.93,0.5704,False,True
+,Torch Modules,gpt-large,774,96,out_of_memory,,,False,False
+,Torch Modules,gpt-xl,1558,1,success,6264.0,0.1984,False,False
+,Torch Modules,gpt-xl,1558,2,success,12164.03,0.3853,False,False
+,Torch Modules,gpt-xl,1558,4,success,17508.12,0.5546,False,False
+,Torch Modules,gpt-xl,1558,8,success,17721.37,0.5614,False,False
+,Torch Modules,gpt-xl,1558,16,success,18228.07,0.5774,False,False
+,Torch Modules,gpt-xl,1558,32,success,18507.74,0.5863,False,True
+,Torch Modules,gpt-xl,1558,64,out_of_memory,,,False,False
+,Compiled torch,gpt-small,124,1,success,34302.84,0.0888,False,False
+,Compiled torch,gpt-small,124,2,success,71762.59,0.1857,False,False
+,Compiled torch,gpt-small,124,4,success,119197.04,0.3085,False,False
+,Compiled torch,gpt-small,124,8,success,165940.44,0.4295,False,False
+,Compiled torch,gpt-small,124,16,success,180098.53,0.4661,False,False
+,Compiled torch,gpt-small,124,32,success,190292.24,0.4925,False,False
+,Compiled torch,gpt-small,124,64,success,194848.27,0.5043,False,False
+,Compiled torch,gpt-small,124,96,success,197433.07,0.511,True,False
+,Compiled torch,gpt-medium,355,1,success,18394.28,0.1355,False,False
+,Compiled torch,gpt-medium,355,2,success,39148.13,0.2883,False,False
+,Compiled torch,gpt-medium,355,4,success,51250.15,0.3774,False,False
+,Compiled torch,gpt-medium,355,8,success,59968.69,0.4416,False,False
+,Compiled torch,gpt-medium,355,16,success,71508.3,0.5266,False,False
+,Compiled torch,gpt-medium,355,32,success,76742.87,0.5651,False,False
+,Compiled torch,gpt-medium,355,64,success,78856.24,0.5807,False,False
+,Compiled torch,gpt-medium,355,96,success,78647.26,0.5792,True,False
+,Compiled torch,gpt-large,774,1,success,11790.72,0.1876,False,False
+,Compiled torch,gpt-large,774,2,success,23930.19,0.3808,False,False
+,Compiled torch,gpt-large,774,4,success,31167.03,0.4959,False,False
+,Compiled torch,gpt-large,774,8,success,32836.16,0.5225,False,False
+,Compiled torch,gpt-large,774,16,success,36635.54,0.583,False,False
+,Compiled torch,gpt-large,774,32,success,37219.78,0.5922,False,False
+,Compiled torch,gpt-large,774,64,success,38225.42,0.6082,True,False
+,Compiled torch,gpt-large,774,96,out_of_memory,,,False,False
+,Compiled torch,gpt-xl,1558,1,success,8805.76,0.2789,False,False
+,Compiled torch,gpt-xl,1558,2,success,16051.83,0.5085,False,False
+,Compiled torch,gpt-xl,1558,4,success,18257.2,0.5783,False,False
+,Compiled torch,gpt-xl,1558,8,success,18780.14,0.5949,False,False
+,Compiled torch,gpt-xl,1558,16,success,19495.26,0.6176,False,False
+,Compiled torch,gpt-xl,1558,32,success,19810.72,0.6276,True,False
+,Compiled torch,gpt-xl,1558,64,out_of_memory,,,False,False

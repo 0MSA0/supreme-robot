@@ -1,0 +1,155 @@
+--- Current impl ---
+Processing gpt-small (124M)
+  Batch size 1: Tokens/sec: 572.42, MFU: 0.0027
+  Batch size 2: Tokens/sec: 11150.40, MFU: 0.0530
+  Batch size 4: Tokens/sec: 15824.88, MFU: 0.0752
+  Batch size 8: Tokens/sec: 14906.68, MFU: 0.0709
+  Batch size 16: Tokens/sec: 16731.95, MFU: 0.0795
+  Batch size 32: Tokens/sec: 17226.13, MFU: 0.0819
+  Batch size 64: Tokens/sec: 17559.38, MFU: 0.0835
+  Batch size 96: Out of memory
+
+Processing gpt-medium (355M)
+  Batch size 1: Tokens/sec: 3539.81, MFU: 0.0482
+  Batch size 2: Tokens/sec: 5256.34, MFU: 0.0715
+  Batch size 4: Tokens/sec: 5412.21, MFU: 0.0736
+  Batch size 8: Tokens/sec: 5768.14, MFU: 0.0785
+  Batch size 16: Tokens/sec: 6061.82, MFU: 0.0825
+  Batch size 32: Out of memory
+
+Processing gpt-large (774M)
+  Batch size 1: Tokens/sec: 2249.64, MFU: 0.0669
+  Batch size 2: Tokens/sec: 2630.62, MFU: 0.0782
+  Batch size 4: Tokens/sec: 2834.12, MFU: 0.0842
+  Batch size 8: Tokens/sec: 2902.77, MFU: 0.0863
+  Batch size 16: Out of memory
+
+Processing gpt-xl (1558M)
+  Batch size 1: Tokens/sec: 1102.12, MFU: 0.0660
+  Batch size 2: Tokens/sec: 1363.53, MFU: 0.0816
+  Batch size 4: Tokens/sec: 1457.49, MFU: 0.0872
+  Batch size 8: Tokens/sec: 1441.83, MFU: 0.0863
+  Batch size 16: Out of memory
+
+--- BFloat16 ---
+Processing gpt-small (124M)
+  Batch size 1: Tokens/sec: 804.28, MFU: 0.0038
+  Batch size 2: Tokens/sec: 11322.33, MFU: 0.0538
+  Batch size 4: Tokens/sec: 25724.68, MFU: 0.1223
+  Batch size 8: Tokens/sec: 39324.54, MFU: 0.1870
+  Batch size 16: Tokens/sec: 49856.77, MFU: 0.2370
+  Batch size 32: Tokens/sec: 52320.19, MFU: 0.2487
+  Batch size 64: Tokens/sec: 53793.52, MFU: 0.2557
+  Batch size 96: Out of memory
+
+Processing gpt-medium (355M)
+  Batch size 1: Tokens/sec: 3663.67, MFU: 0.0498
+  Batch size 2: Tokens/sec: 8070.70, MFU: 0.1098
+  Batch size 4: Tokens/sec: 12586.26, MFU: 0.1712
+  Batch size 8: Tokens/sec: 17533.18, MFU: 0.2385
+  Batch size 16: Tokens/sec: 19163.10, MFU: 0.2607
+  Batch size 32: Tokens/sec: 20624.50, MFU: 0.2806
+  Batch size 64: Out of memory
+
+Processing gpt-large (774M)
+  Batch size 1: Tokens/sec: 2825.72, MFU: 0.0840
+  Batch size 2: Tokens/sec: 4509.74, MFU: 0.1340
+  Batch size 4: Tokens/sec: 7299.41, MFU: 0.2169
+  Batch size 8: Tokens/sec: 9797.27, MFU: 0.2911
+  Batch size 16: Tokens/sec: 10693.48, MFU: 0.3178
+  Batch size 32: Out of memory
+
+Processing gpt-xl (1558M)
+  Batch size 1: Tokens/sec: 2104.22, MFU: 0.1259
+  Batch size 2: Tokens/sec: 2925.42, MFU: 0.1751
+  Batch size 4: Tokens/sec: 5105.85, MFU: 0.3056
+  Batch size 8: Tokens/sec: 5818.45, MFU: 0.3482
+  Batch size 16: Out of memory
+
+--- Torch Modules ---
+Processing gpt-small (124M)
+  Batch size 1: Tokens/sec: 24892.20, MFU: 0.0644
+  Batch size 2: Tokens/sec: 49188.59, MFU: 0.1273
+  Batch size 4: Tokens/sec: 90263.27, MFU: 0.2336
+  Batch size 8: Tokens/sec: 130537.52, MFU: 0.3379
+  Batch size 16: Tokens/sec: 154099.35, MFU: 0.3988
+  Batch size 32: Tokens/sec: 158290.33, MFU: 0.4097
+  Batch size 64: Tokens/sec: 161710.45, MFU: 0.4185
+  Batch size 96: Tokens/sec: 163477.51, MFU: 0.4231
+  Max batch size that fit: 96
+
+Processing gpt-medium (355M)
+  Batch size 1: Tokens/sec: 12387.73, MFU: 0.0912
+  Batch size 2: Tokens/sec: 25187.32, MFU: 0.1855
+  Batch size 4: Tokens/sec: 48348.96, MFU: 0.3560
+  Batch size 8: Tokens/sec: 55401.84, MFU: 0.4080
+  Batch size 16: Tokens/sec: 64789.92, MFU: 0.4771
+  Batch size 32: Tokens/sec: 68375.41, MFU: 0.5035
+  Batch size 64: Tokens/sec: 70223.80, MFU: 0.5171
+  Batch size 96: Tokens/sec: 70501.95, MFU: 0.5192
+  Max batch size that fit: 96
+
+Processing gpt-large (774M)
+  Batch size 1: Tokens/sec: 8459.98, MFU: 0.1346
+  Batch size 2: Tokens/sec: 16803.67, MFU: 0.2674
+  Batch size 4: Tokens/sec: 30164.32, MFU: 0.4800
+  Batch size 8: Tokens/sec: 32380.27, MFU: 0.5152
+  Batch size 16: Tokens/sec: 35117.86, MFU: 0.5588
+  Batch size 32: Tokens/sec: 35747.34, MFU: 0.5688
+  Batch size 64: Tokens/sec: 35847.93, MFU: 0.5704
+  Batch size 96: Out of memory
+  Max batch size that fit: 64
+
+Processing gpt-xl (1558M)
+  Batch size 1: Tokens/sec: 6264.00, MFU: 0.1984
+  Batch size 2: Tokens/sec: 12164.03, MFU: 0.3853
+  Batch size 4: Tokens/sec: 17508.12, MFU: 0.5546
+  Batch size 8: Tokens/sec: 17721.37, MFU: 0.5614
+  Batch size 16: Tokens/sec: 18228.07, MFU: 0.5774
+  Batch size 32: Tokens/sec: 18507.74, MFU: 0.5863
+  Batch size 64: Out of memory
+  Max batch size that fit: 32
+
+--- Compiled torch ---
+Processing gpt-small (124M)
+  Batch size 1: Tokens/sec: 34302.84, MFU: 0.0888
+  Batch size 2: Tokens/sec: 71762.59, MFU: 0.1857
+  Batch size 4: Tokens/sec: 119197.04, MFU: 0.3085
+  Batch size 8: Tokens/sec: 165940.44, MFU: 0.4295
+  Batch size 16: Tokens/sec: 180098.53, MFU: 0.4661
+  Batch size 32: Tokens/sec: 190292.24, MFU: 0.4925
+  Batch size 64: Tokens/sec: 194848.27, MFU: 0.5043
+  Batch size 96: Tokens/sec: 197433.07, MFU: 0.5110
+  -> best: batch 96, 197433 tokens/s, MFU 0.5110
+
+Processing gpt-medium (355M)
+  Batch size 1: Tokens/sec: 18394.28, MFU: 0.1355
+  Batch size 2: Tokens/sec: 39148.13, MFU: 0.2883
+  Batch size 4: Tokens/sec: 51250.15, MFU: 0.3774
+  Batch size 8: Tokens/sec: 59968.69, MFU: 0.4416
+  Batch size 16: Tokens/sec: 71508.30, MFU: 0.5266
+  Batch size 32: Tokens/sec: 76742.87, MFU: 0.5651
+  Batch size 64: Tokens/sec: 78856.24, MFU: 0.5807
+  Batch size 96: Tokens/sec: 78647.26, MFU: 0.5792
+  -> best: batch 96, 78647 tokens/s, MFU 0.5792
+
+Processing gpt-large (774M)
+  Batch size 1: Tokens/sec: 11790.72, MFU: 0.1876
+  Batch size 2: Tokens/sec: 23930.19, MFU: 0.3808
+  Batch size 4: Tokens/sec: 31167.03, MFU: 0.4959
+  Batch size 8: Tokens/sec: 32836.16, MFU: 0.5225
+  Batch size 16: Tokens/sec: 36635.54, MFU: 0.5830
+  Batch size 32: Tokens/sec: 37219.78, MFU: 0.5922
+  Batch size 64: Tokens/sec: 38225.42, MFU: 0.6082
+  Batch size 96: Out of memory
+  -> best: batch 64, 38225 tokens/s, MFU 0.6082
+
+Processing gpt-xl (1558M)
+  Batch size 1: Tokens/sec: 8805.76, MFU: 0.2789
+  Batch size 2: Tokens/sec: 16051.83, MFU: 0.5085
+  Batch size 4: Tokens/sec: 18257.20, MFU: 0.5783
+  Batch size 8: Tokens/sec: 18780.14, MFU: 0.5949
+  Batch size 16: Tokens/sec: 19495.26, MFU: 0.6176
+  Batch size 32: Tokens/sec: 19810.72, MFU: 0.6276
+  Batch size 64: Out of memory
+  -> best: batch 32, 19811 tokens/s, MFU 0.6276
