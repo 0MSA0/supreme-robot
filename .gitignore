@@ -1,2 +1,5 @@
 .idea
+.vscode
 src/supreme_robot/weights/*
+src/supreme_robot/__pycache__/*
+src/supreme_robot_torch/__pycache__/*
