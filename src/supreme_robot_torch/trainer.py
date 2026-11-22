@@ -75,6 +75,7 @@ def train_model(
                 run.log({
                     "train/loss": loss.item(),
                     "train/accuracy": accuracy,
+                    "train/learning_rate": optimizer.param_groups[0]["lr"],
                     "system/vram_allocated_gb": vram_gb,
                     "epoch": epoch,
                 })
