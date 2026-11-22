@@ -32,10 +32,10 @@ def main() -> None:
     # Training settings
     config = {
         "epochs": 1,
-        "lr": 3e-4,
-        "batch_size": 64,
+        "lr": 1.5e-4,
+        "batch_size": 8,
         "weight_decay": 0.1,
-        "data_loader_num_workers": 8,
+        "data_loader_num_workers": 2,
     }
 
     # Model settings
