@@ -52,7 +52,8 @@ def main() -> None:
 
     wandb_project_name = "supreme-robot-torch"
 
-    save_path = "./weights/gpt2-small-124M.pth"
+    save_path = Path(__file__).resolve().parents[2] / "weights" / "gpt2-small-124M.pth"
+    save_path.parent.mkdir(parents=True, exist_ok=True)
 
     model = SupremeGPTModel(gpt_config_124_m)
 

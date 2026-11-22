@@ -1,6 +1,7 @@
 .idea
 .vscode
 wandb/*
+weights/*
 src/supreme_robot/weights/*
 src/supreme_robot/__pycache__/*
 src/supreme_robot_torch/weights/*
